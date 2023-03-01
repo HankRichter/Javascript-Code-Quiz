@@ -1,3 +1,5 @@
+const startButton = document.querySelector(".start-button");
+const timer = document.querySelector(".timer");
 // 1.timer starts and counts down when start is clicked
 function timerScore() {
   let timeLeft = 75;
