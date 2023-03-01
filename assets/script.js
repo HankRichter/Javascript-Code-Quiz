@@ -1,5 +1,7 @@
+// Variables
 const startButton = document.querySelector(".start-button");
 const timer = document.querySelector(".timer");
+
 // 1.timer starts and counts down when start is clicked
 function timerScore() {
   let timeLeft = 75;
@@ -16,6 +18,7 @@ function timerScore() {
 // 2.first question appears when start is clicked
 // 3.capture the answer of the first question
 // 4.rinse and repeat for the questions and capturing answers
+// 5.10 seconds or score gets removed from total and a wrong answer is clicked.
 // 6.final score appears when last quesiton is answered
 // 7.allow user to end intials for score
 // 8. highscore table is viewable
