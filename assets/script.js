@@ -8,7 +8,7 @@ function timerScore() {
 
   const countdown = setInterval(function () {
     timeLeft--;
-    timer.innerHTML = timeLeft + " score";
+    timer.innerHTML = "Time/Score: " + timeLeft;
 
     if (timeLeft === 0) {
       clearInterval(countdown);
