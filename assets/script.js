@@ -3,6 +3,74 @@ const startButton = document.querySelector(".start-button");
 const timer = document.querySelector(".time-remaining");
 const title = document.querySelector(".title");
 
+const question1 = {
+  question: "Commonly used data types DO NOT include?",
+  answer: "alert",
+  answerPool: ["string", "alert", "boolean", "numbers"],
+};
+const question2 = {
+  question: "The condition in an if/else statement is enclosed in_____",
+  answer: "3. parentheses",
+  answerPool: [
+    "1. quotes",
+    "2. curly brackets",
+    "3. parentheses",
+    "4. square brackets",
+  ],
+};
+const question3 = {
+  question: "Arrays in JavaScript can be used to store______.",
+  answer: "4. all of the above",
+  answerPool: [
+    "1. numbers and strings",
+    "2. other arrays",
+    "3. booleans",
+    "4. all of the above",
+  ],
+};
+const question4 = {
+  question:
+    "String values must be enclosed within _____ when being assigned to variables.",
+  answer: "3. quotes",
+  answerPool: ["1. commas", "2. curly brackets", "3. quotes", "4. parantheses"],
+};
+const question5 = {
+  question:
+    "A very useful tool used during development and debugging for printing content to the debugger is:",
+  answer: "4. console.log()",
+  answerPool: [
+    "1. JavaScript",
+    "2. terminal/bash",
+    "3. for loops",
+    "4 console.log",
+  ],
+};
+// const question6 = {
+//   question: "Commonly used data types DO NOT include?",
+//   answer: "alert",
+//   answerPool: ["string", "alert", "boolean", "numbers"],
+// };
+// const question7 = {
+//   question: "Commonly used data types DO NOT include?",
+//   answer: "alert",
+//   answerPool: ["string", "alert", "boolean", "numbers"],
+// };
+// const question8 = {
+//   question: "Commonly used data types DO NOT include?",
+//   answer: "alert",
+//   answerPool: ["string", "alert", "boolean", "numbers"],
+// };
+// const question9 = {
+//   question: "Commonly used data types DO NOT include?",
+//   answer: "alert",
+//   answerPool: ["string", "alert", "boolean", "numbers"],
+// };
+// const question10 = {
+//   question: "Commonly used data types DO NOT include?",
+//   answer: "alert",
+//   answerPool: ["string", "alert", "boolean", "numbers"],
+// };
+
 // 1.timer starts and counts down when start is clicked
 function timerScore() {
   let timeLeft = 75;
