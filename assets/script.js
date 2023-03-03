@@ -1,6 +1,7 @@
 // Variables
 const startButton = document.querySelector(".start-button");
-const timer = document.querySelector(".timer");
+const timer = document.querySelector(".time-remaining");
+const title = document.querySelector(".title");
 
 // 1.timer starts and counts down when start is clicked
 function timerScore() {
@@ -8,7 +9,7 @@ function timerScore() {
 
   const countdown = setInterval(function () {
     timeLeft--;
-    timer.innerHTML = "Time/Score: " + timeLeft;
+    timer.innerHTML = timeLeft;
 
     if (timeLeft === 0) {
       clearInterval(countdown);
