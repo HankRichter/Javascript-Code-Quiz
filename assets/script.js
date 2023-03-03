@@ -16,6 +16,26 @@ function timerScore() {
   }, 1000);
 }
 // 2.first question appears when start is clicked
+function question() {
+  title.innerHTML = questions[0].question;
+  startButton.style.display = "none";
+
+  const answerPool = questions[0].answerPool;
+
+  for (let i = 0; i < answerPool.length; i++) {
+    const answerButton = document.createElement("button");
+    answerButton.innerHTML = answerPool[i];
+    title.appendChild(answerButton);
+    answerButton.addEventListener("click", function (event) {
+      if (questions[0].answer === event.target.innerText) {
+        console.log("answer was correct");
+        // score, go next questions, if not last Q
+      } else {
+        console.log("answer was wrong");
+      }
+    });
+  }
+}
 // 3.capture the answer of the first question
 // 4.rinse and repeat for the questions and capturing answers
 // 5.10 seconds or score gets removed from total and a wrong answer is clicked.
