@@ -165,6 +165,13 @@ function highScoreTable() {
   submitButton.style.display = "none";
   input.style.display = "none";
 }
+
+function resetScoreboard() {
+  localStorage.clear("coding-quiz-score");
+  leaderboardEntries.innerHTML = "";
+}
+
+// Button within scoreboard to go back to.
 function gotoHome() {
   leaderboardContents.style.display = "none";
   questionsContainer.style.display = "none";
