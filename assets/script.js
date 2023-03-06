@@ -197,3 +197,12 @@ function userInput(event) {
   }
   highScoreTable();
 }
+
+startButton.addEventListener("click", function () {
+  timerScore();
+  question(questionCounter);
+});
+
+highScore.addEventListener("click", highScoreTable);
+resetButton.addEventListener("click", resetScoreboard);
+gobackButton.addEventListener("click", gotoHome);
