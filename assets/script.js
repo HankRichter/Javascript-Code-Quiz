@@ -129,3 +129,12 @@ function question() {
 // 8. highscore table is viewable
 
 startButton.addEventListener("click", timerScore);
+function gotoHome() {
+  leaderboardContents.style.display = "none";
+  questionsContainer.style.display = "none";
+  title.style.display = "flex";
+  startButton.style.display = "block";
+  timerContainer.style.display = "block";
+  highScore.style.display = "block";
+  leaderboardEntries.innerHTML = "";
+}
