@@ -138,3 +138,19 @@ function gotoHome() {
   highScore.style.display = "block";
   leaderboardEntries.innerHTML = "";
 }
+function userInput(event) {
+  console.log(input.value);
+  const scoreEntry = {
+    intials: input.value,
+    score: timeLeft,
+  };
+  if (leaderboard) {
+    leaderboard.push(scoreEntry);
+    localStorage.setItem("coding-quiz-score", JSON.stringify(leaderboard));
+  } else {
+    leaderboard = [];
+    leaderboard.push(scoreEntry);
+    localStorage.setItem("coding-quiz-score", JSON.stringify(leaderboard));
+  }
+  highScoreTable();
+}
