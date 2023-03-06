@@ -89,34 +89,47 @@ const question5 = {
 
 // 1.timer starts and counts down when start is clicked
 function timerScore() {
-  let timeLeft = 75;
-
-  const countdown = setInterval(function () {
+  intervalRef = setInterval(function () {
     timeLeft--;
     timer.innerHTML = timeLeft;
-
-    if (timeLeft === 0) {
-      clearInterval(countdown);
+    if (timeLeft <= 0) {
+      clearInterval(intervalRef);
+      gameResults();
     }
   }, 1000);
 }
 // 2.first question appears when start is clicked
-function question() {
-  title.innerHTML = questions[0].question;
-  startButton.style.display = "none";
+let questionCounter = 0;
 
-  const answerPool = questions[0].answerPool;
+function question(index) {
+  questionsContainer.innerHTML = questions[index].question;
+  startButton.style.display = "none";
+  title.style.display = "none";
+
+  const answerPool = questions[index].answerPool;
 
   for (let i = 0; i < answerPool.length; i++) {
+    const answerButtonContainer = document.createElement("div");
     const answerButton = document.createElement("button");
+    answerButton.classList.add("answerButton");
     answerButton.innerHTML = answerPool[i];
-    title.appendChild(answerButton);
+    questionsContainer.appendChild(answerButtonContainer);
+    answerButtonContainer.appendChild(answerButton);
     answerButton.addEventListener("click", function (event) {
-      if (questions[0].answer === event.target.innerText) {
-        console.log("answer was correct");
-        // score, go next questions, if not last Q
+      questionCounter = questionCounter + 1;
+      if (questions[index].answer === event.target.innerText) {
+        if (questionCounter >= questions.length) {
+          gameResults();
+        } else {
+          question(questionCounter);
+        }
       } else {
-        console.log("answer was wrong");
+        timeLeft = timeLeft - 10;
+        if (questionCounter >= questions.length) {
+          gameResults();
+        } else {
+          question(questionCounter);
+        }
       }
     });
   }
