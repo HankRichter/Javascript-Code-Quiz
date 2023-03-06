@@ -21,9 +21,10 @@ console.log(leaderboard);
 
 const question1 = {
   question: "Commonly used data types DO NOT include?",
-  answer: "alert",
-  answerPool: ["string", "alert", "boolean", "numbers"],
+  answer: "2. alert",
+  answerPool: ["1. string", "2. alert", "3. boolean", "4. numbers"],
 };
+
 const question2 = {
   question: "The condition in an if/else statement is enclosed in_____",
   answer: "3. parentheses",
@@ -34,6 +35,7 @@ const question2 = {
     "4. square brackets",
   ],
 };
+
 const question3 = {
   question: "Arrays in JavaScript can be used to store______.",
   answer: "4. all of the above",
@@ -44,48 +46,27 @@ const question3 = {
     "4. all of the above",
   ],
 };
+
 const question4 = {
   question:
     "String values must be enclosed within _____ when being assigned to variables.",
   answer: "3. quotes",
   answerPool: ["1. commas", "2. curly brackets", "3. quotes", "4. parantheses"],
 };
+
 const question5 = {
   question:
     "A very useful tool used during development and debugging for printing content to the debugger is:",
-  answer: "4. console.log()",
+  answer: "4. console.log",
   answerPool: [
     "1. JavaScript",
     "2. terminal/bash",
     "3. for loops",
-    "4 console.log",
+    "4. console.log",
   ],
 };
-// const question6 = {
-//   question: "Commonly used data types DO NOT include?",
-//   answer: "alert",
-//   answerPool: ["string", "alert", "boolean", "numbers"],
-// };
-// const question7 = {
-//   question: "Commonly used data types DO NOT include?",
-//   answer: "alert",
-//   answerPool: ["string", "alert", "boolean", "numbers"],
-// };
-// const question8 = {
-//   question: "Commonly used data types DO NOT include?",
-//   answer: "alert",
-//   answerPool: ["string", "alert", "boolean", "numbers"],
-// };
-// const question9 = {
-//   question: "Commonly used data types DO NOT include?",
-//   answer: "alert",
-//   answerPool: ["string", "alert", "boolean", "numbers"],
-// };
-// const question10 = {
-//   question: "Commonly used data types DO NOT include?",
-//   answer: "alert",
-//   answerPool: ["string", "alert", "boolean", "numbers"],
-// };
+
+const questions = [question1, question2, question3, question4, question5];
 
 // 1.timer starts and counts down when start is clicked
 function timerScore() {
@@ -134,14 +115,6 @@ function question(index) {
     });
   }
 }
-// 3.capture the answer of the first question
-// 4.rinse and repeat for the questions and capturing answers
-// 5.10 seconds or score gets removed from total and a wrong answer is clicked.
-// 6.final score appears when last quesiton is answered
-// 7.allow user to end intials for score
-// 8. highscore table is viewable
-
-startButton.addEventListener("click", timerScore);
 
 function gameResults() {
   if (timeLeft > 0) {
@@ -194,6 +167,7 @@ function gotoHome() {
   highScore.style.display = "block";
   leaderboardEntries.innerHTML = "";
 }
+
 function userInput(event) {
   console.log(input.value);
   const scoreEntry = {
