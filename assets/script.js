@@ -129,6 +129,22 @@ function question() {
 // 8. highscore table is viewable
 
 startButton.addEventListener("click", timerScore);
+
+function gameResults() {
+  if (timeLeft > 0) {
+    title.innerHTML = "All done!";
+    title.appendChild(p);
+    input.style.display = "block";
+    submitButton.style.display = "block";
+    submitButton.addEventListener("click", userInput);
+    p.innerHTML = "Your score: " + timeLeft;
+  } else if (timeLeft <= 0) {
+    title.innerHTML = "GAME OVER";
+  }
+  timer.innerHTML = timeLeft;
+  clearInterval(intervalRef);
+}
+
 function gotoHome() {
   leaderboardContents.style.display = "none";
   questionsContainer.style.display = "none";
