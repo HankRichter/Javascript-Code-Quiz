@@ -13,9 +13,13 @@ header{
 .title{
     display: flex;
     justify-content: space-around;
+    font-size: 30px;
 }
 
 .start-button{
     display: flex;
     justify-content: space-around;
+    margin-left: 575px;
+    border-radius: 8px;
+    cursor: pointer;
 }
