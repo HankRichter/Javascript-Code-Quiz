@@ -1,7 +1,23 @@
 // Variables
 const startButton = document.querySelector(".start-button");
 const timer = document.querySelector(".time-remaining");
+const timerContainer = document.querySelector(".timer");
 const title = document.querySelector(".title");
+const highScore = document.querySelector(".highscores");
+const p = document.createElement("p");
+const leaderboardContents = document.querySelector(".leaderboardContents");
+const input = document.querySelector(".intialsInput");
+const submitButton = document.querySelector(".submitButton");
+const resetButton = document.querySelector(".resetButton");
+const gobackButton = document.querySelector(".gobackButton");
+const questionsContainer = document.querySelector(".questionsContainer");
+const leaderboardEntries = document.querySelector(".leaderboardEntries");
+let leaderboard = JSON.parse(localStorage.getItem("coding-quiz-score"));
+let timeLeft = 75;
+let intervalRef = null;
+p.classList.add("ScoreP");
+
+console.log(leaderboard);
 
 const question1 = {
   question: "Commonly used data types DO NOT include?",
