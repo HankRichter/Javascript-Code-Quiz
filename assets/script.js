@@ -145,6 +145,26 @@ function gameResults() {
   clearInterval(intervalRef);
 }
 
+function highScoreTable() {
+  if (leaderboard) {
+    for (let i = 0; i < leaderboard.length; i++) {
+      const scoreEntryContainer = document.createElement("div");
+      const scoreEntryValue = document.createElement("span");
+      leaderboardEntries.appendChild(scoreEntryContainer);
+      scoreEntryContainer.appendChild(scoreEntryValue);
+      scoreEntryValue.innerHTML += leaderboard[i].intials;
+      scoreEntryValue.innerHTML += leaderboard[i].score;
+    }
+  }
+  questionsContainer.style.display = "none";
+  leaderboardContents.style.display = "block";
+  title.style.display = "none";
+  startButton.style.display = "none";
+  timerContainer.style.display = "none";
+  highScore.style.display = "none";
+  submitButton.style.display = "none";
+  input.style.display = "none";
+}
 function gotoHome() {
   leaderboardContents.style.display = "none";
   questionsContainer.style.display = "none";
