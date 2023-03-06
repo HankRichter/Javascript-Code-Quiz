@@ -4,7 +4,6 @@ const timer = document.querySelector(".time-remaining");
 const timerContainer = document.querySelector(".timer");
 const title = document.querySelector(".title");
 const highScore = document.querySelector(".highscores");
-const p = document.createElement("p");
 const leaderboardContents = document.querySelector(".leaderboardContents");
 const input = document.querySelector(".intialsInput");
 const submitButton = document.querySelector(".submitButton");
@@ -15,9 +14,6 @@ const leaderboardEntries = document.querySelector(".leaderboardEntries");
 let leaderboard = JSON.parse(localStorage.getItem("coding-quiz-score"));
 let timeLeft = 75;
 let intervalRef = null;
-p.classList.add("ScoreP");
-
-console.log(leaderboard);
 
 const question1 = {
   question: "Commonly used data types DO NOT include?",
@@ -85,6 +81,8 @@ let questionCounter = 0;
 function question(index) {
   questionsContainer.innerHTML = questions[index].question;
   startButton.style.display = "none";
+  questionsContainer.style.display = "block";
+  highScore.disabled = true;
   title.style.display = "none";
 
   const answerPool = questions[index].answerPool;
@@ -118,14 +116,22 @@ function question(index) {
 
 function gameResults() {
   if (timeLeft > 0) {
-    title.innerHTML = "All done!";
-    title.appendChild(p);
+    // display all done p tag with score
+    // title.appendChild(p);
+    // title.innerHTML = "All done!";
+    // p.innerHTML = "Your score: " + timeLeft;
+    questionsContainer.style.display = "none";
+    input.style.display = "block";
+    highScore.disabled = false;
+    submitButton.style.display = "block";
+    submitButton.addEventListener("click", userInput);
+  } else if (timeLeft <= 0) {
+    title.innerHTML = "GAME OVER";
+    // display game over p tag
+    questionsContainer.style.display = "none";
     input.style.display = "block";
     submitButton.style.display = "block";
     submitButton.addEventListener("click", userInput);
-    p.innerHTML = "Your score: " + timeLeft;
-  } else if (timeLeft <= 0) {
-    title.innerHTML = "GAME OVER";
   }
   timer.innerHTML = timeLeft;
   clearInterval(intervalRef);
@@ -155,20 +161,22 @@ function highScoreTable() {
 function resetScoreboard() {
   localStorage.clear("coding-quiz-score");
   leaderboardEntries.innerHTML = "";
+  leaderboard = JSON.parse(localStorage.getItem("coding-quiz-score"));
 }
 
 // Button within scoreboard to go back to.
 function gotoHome() {
   leaderboardContents.style.display = "none";
-  questionsContainer.style.display = "none";
   title.style.display = "flex";
   startButton.style.display = "block";
   timerContainer.style.display = "block";
   highScore.style.display = "block";
   leaderboardEntries.innerHTML = "";
+  questionCounter = 0;
+  timeLeft = 75;
 }
 
-function userInput(event) {
+function userInput() {
   console.log(input.value);
   const scoreEntry = {
     intials: input.value,
