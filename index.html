@@ -10,7 +10,7 @@
   <body>
     <header>
       <nav>
-        <a class="highscores" href="#">View Highscores</a>
+        <button class="highscores">View Highscores</button>
       </nav>
       <p class="timer">Time/Score:<span class="time-remaining"></span></p>
     </header>
@@ -19,8 +19,22 @@
         <div class="title">
           <h1>Coding Quiz</h1>
         </div>
+        <div class="questionsContainer">
+        </div>
         <button class="start-button">Start Quiz</button>
       </section>
+      <section class="scoreSubmit">
+        <input class="intialsInput" placeholder="INTIALS HERE"></input>
+        <button class="submitButton">Post Score</button>
+      </section>
+      <section class="leaderboardContents">Leaderboard
+        <div class="leaderboardEntries"></div>
+        <div class="leaderboardButtons">
+          <button class="resetButton">Reset Scoreboard</button>
+          <button class="gobackButton">Go back</button>
+        </div>
+      </section>
+
     </main>
     <script src="./assets/script.js"></script>
   </body>
