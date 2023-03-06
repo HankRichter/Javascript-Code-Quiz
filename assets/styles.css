@@ -22,3 +22,19 @@ header {
   margin: auto;
   border-radius: 8px;
 }
+
+.intialsInput {
+  display: none;
+}
+
+.submitButton {
+  display: none;
+}
+
+.leaderboardContents {
+  display: none;
+}
+
+/* .scoreP{
+
+} */
