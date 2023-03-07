@@ -177,20 +177,24 @@ function gotoHome() {
 }
 
 function userInput() {
-  console.log(input.value);
   const scoreEntry = {
     intials: input.value,
     score: timeLeft,
   };
-  if (leaderboard) {
-    leaderboard.push(scoreEntry);
-    localStorage.setItem("coding-quiz-score", JSON.stringify(leaderboard));
+  if (input.value.length > 0) {
+    if (leaderboard) {
+      leaderboard.push(scoreEntry);
+      localStorage.setItem("coding-quiz-score", JSON.stringify(leaderboard));
+    } else {
+      leaderboard = [];
+      leaderboard.push(scoreEntry);
+      localStorage.setItem("coding-quiz-score", JSON.stringify(leaderboard));
+    }
+    input.value = "";
+    highScoreTable();
   } else {
-    leaderboard = [];
-    leaderboard.push(scoreEntry);
-    localStorage.setItem("coding-quiz-score", JSON.stringify(leaderboard));
+    alert("Initals are required");
   }
-  highScoreTable();
 }
 
 startButton.addEventListener("click", function () {
