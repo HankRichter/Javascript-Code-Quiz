@@ -6,7 +6,7 @@ This simple quiz us meant to test someones basic knowledge of Javascript. It all
 
 ## Installation
 
-Load the URL () and start taking the quiz!
+Load the URL (https://hankrichter.github.io/Javascript-Code-Quiz/) and start taking the quiz!
 
 ## Usage
 
