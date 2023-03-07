@@ -186,7 +186,7 @@ function resetScoreboard() {
   leaderboard = JSON.parse(localStorage.getItem("coding-quiz-score"));
 }
 
-// Returns to the "home page" and allows the quiz to be take again
+// Returns to the "home page" and allows the quiz to be taken again
 function gotoHome() {
   leaderboardContents.style.display = "none";
   title.style.display = "flex";
