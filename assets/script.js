@@ -93,9 +93,10 @@ function question(index) {
   for (let i = 0; i < answerPool.length; i++) {
     const answerButtonContainer = document.createElement("div");
     const answerButton = document.createElement("button");
-    answerButton.classList.add("answerButton");
+    answerButton.classList.add("button");
     answerButton.innerHTML = answerPool[i];
     questionsContainer.appendChild(answerButtonContainer);
+    questionsContainer.classList.add("questionsContainer");
     answerButtonContainer.appendChild(answerButton);
     answerButton.addEventListener("click", function (event) {
       questionCounter = questionCounter + 1;
@@ -165,6 +166,7 @@ function highScoreTable() {
       const scoreEntryValue = document.createElement("span");
       leaderboardEntries.appendChild(scoreEntryContainer);
       scoreEntryContainer.appendChild(scoreEntryValue);
+      scoreEntryValue.classList.add("scoreValue");
       scoreEntryValue.innerHTML += leaderboard[i].intials;
       scoreEntryValue.innerHTML += leaderboard[i].score;
     }
