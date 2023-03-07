@@ -14,7 +14,9 @@ const leaderboardEntries = document.querySelector(".leaderboardEntries");
 let leaderboard = JSON.parse(localStorage.getItem("coding-quiz-score"));
 let timeLeft = 75;
 let intervalRef = null;
+let questionCounter = 0;
 
+// Objects storing questions
 const question1 = {
   question: "Commonly used data types DO NOT include?",
   answer: "2. alert",
@@ -62,9 +64,10 @@ const question5 = {
   ],
 };
 
+// Array for objects
 const questions = [question1, question2, question3, question4, question5];
 
-// 1.timer starts and counts down when start is clicked
+// Timer function to keep track of time and score
 function timerScore() {
   timer.innerHTML = timeLeft;
   intervalRef = setInterval(function () {
@@ -76,9 +79,8 @@ function timerScore() {
     }
   }, 1000);
 }
-// 2.first question appears when start is clicked
-let questionCounter = 0;
 
+// Question function, created the questions and loops through the array to present the questions to the user.
 function question(index) {
   questionsContainer.innerHTML = questions[index].question;
   startButton.style.display = "none";
@@ -115,6 +117,7 @@ function question(index) {
   }
 }
 
+// Function displays the score in the top right as well as shows the input field for intials to track scores
 function gameResults() {
   if (timeLeft > 0) {
     questionsContainer.style.display = "none";
@@ -132,46 +135,7 @@ function gameResults() {
   clearInterval(intervalRef);
 }
 
-function highScoreTable() {
-  if (leaderboard) {
-    for (let i = 0; i < leaderboard.length; i++) {
-      const scoreEntryContainer = document.createElement("div");
-      const scoreEntryValue = document.createElement("span");
-      leaderboardEntries.appendChild(scoreEntryContainer);
-      scoreEntryContainer.appendChild(scoreEntryValue);
-      scoreEntryValue.innerHTML += leaderboard[i].intials;
-      scoreEntryValue.innerHTML += leaderboard[i].score;
-    }
-  }
-  leaderboardContents.style.display = "block";
-  questionsContainer.style.display = "none";
-  title.style.display = "none";
-  startButton.style.display = "none";
-  timerContainer.style.display = "none";
-  highScore.style.display = "none";
-  submitButton.style.display = "none";
-  input.style.display = "none";
-}
-
-function resetScoreboard() {
-  localStorage.clear("coding-quiz-score");
-  leaderboardEntries.innerHTML = "";
-  leaderboard = JSON.parse(localStorage.getItem("coding-quiz-score"));
-}
-
-// Button within scoreboard to go back to.
-function gotoHome() {
-  leaderboardContents.style.display = "none";
-  title.style.display = "flex";
-  startButton.style.display = "block";
-  timerContainer.style.display = "block";
-  highScore.style.display = "block";
-  leaderboardEntries.innerHTML = "";
-  questionCounter = 0;
-  timeLeft = 75;
-  timer.innerHTML = "";
-}
-
+// Function takes user input and stores in local storage.
 function userInput() {
   const scoreEntry = {
     intials: input.value,
@@ -193,6 +157,49 @@ function userInput() {
   }
 }
 
+// Function takes user input and displays it on the leaderboard.
+function highScoreTable() {
+  if (leaderboard) {
+    for (let i = 0; i < leaderboard.length; i++) {
+      const scoreEntryContainer = document.createElement("div");
+      const scoreEntryValue = document.createElement("span");
+      leaderboardEntries.appendChild(scoreEntryContainer);
+      scoreEntryContainer.appendChild(scoreEntryValue);
+      scoreEntryValue.innerHTML += leaderboard[i].intials;
+      scoreEntryValue.innerHTML += leaderboard[i].score;
+    }
+  }
+  leaderboardContents.style.display = "block";
+  questionsContainer.style.display = "none";
+  title.style.display = "none";
+  startButton.style.display = "none";
+  timerContainer.style.display = "none";
+  highScore.style.display = "none";
+  submitButton.style.display = "none";
+  input.style.display = "none";
+}
+
+// Function clears user data from local storage
+function resetScoreboard() {
+  localStorage.clear("coding-quiz-score");
+  leaderboardEntries.innerHTML = "";
+  leaderboard = JSON.parse(localStorage.getItem("coding-quiz-score"));
+}
+
+// Returns to the "home page" and allows the quiz to be take again
+function gotoHome() {
+  leaderboardContents.style.display = "none";
+  title.style.display = "flex";
+  startButton.style.display = "block";
+  timerContainer.style.display = "block";
+  highScore.style.display = "block";
+  leaderboardEntries.innerHTML = "";
+  questionCounter = 0;
+  timeLeft = 75;
+  timer.innerHTML = "";
+}
+
+// Event listeners to call functions
 startButton.addEventListener("click", function () {
   timerScore();
   question(questionCounter);
