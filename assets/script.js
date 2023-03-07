@@ -116,18 +116,12 @@ function question(index) {
 
 function gameResults() {
   if (timeLeft > 0) {
-    // display all done p tag with score
-    // title.appendChild(p);
-    // title.innerHTML = "All done!";
-    // p.innerHTML = "Your score: " + timeLeft;
     questionsContainer.style.display = "none";
     input.style.display = "block";
     highScore.disabled = false;
     submitButton.style.display = "block";
     submitButton.addEventListener("click", userInput);
   } else if (timeLeft <= 0) {
-    title.innerHTML = "GAME OVER";
-    // display game over p tag
     questionsContainer.style.display = "none";
     input.style.display = "block";
     submitButton.style.display = "block";
@@ -148,8 +142,8 @@ function highScoreTable() {
       scoreEntryValue.innerHTML += leaderboard[i].score;
     }
   }
-  questionsContainer.style.display = "none";
   leaderboardContents.style.display = "block";
+  questionsContainer.style.display = "none";
   title.style.display = "none";
   startButton.style.display = "none";
   timerContainer.style.display = "none";
