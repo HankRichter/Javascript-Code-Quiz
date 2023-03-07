@@ -1,6 +1,18 @@
 /* style header and main tags */
 * {
   box-sizing: border-box;
+  background-color: beige;
+}
+
+.button {
+  justify-content: center;
+  margin: 5px;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: lightcyan;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
 }
 
 header {
@@ -16,25 +28,49 @@ header {
   font-size: 25px;
 }
 
+.timer {
+  font-size: 20px;
+}
+
+.intialsInput {
+  display: none;
+  margin: auto;
+  width: 25%;
+}
+
+.submitButton {
+  display: none;
+  margin: auto;
+  width: 10%;
+}
+
+.leaderboardContents {
+  display: none;
+  text-align: center;
+}
+
+.leaderboardContentsHeading {
+  margin: auto;
+  font-size: 30px;
+}
+
+.scoreValue {
+  font-size: 20px;
+}
+
+.questionsContainer {
+  font-size: 25px;
+}
+
 .start-button {
   display: flex;
   justify-content: center;
   margin: auto;
   border-radius: 8px;
+  width: auto;
 }
 
-.intialsInput {
-  display: none;
+.button2 {
+  padding: 2px;
+  width: auto;
 }
-
-.submitButton {
-  display: none;
-}
-
-.leaderboardContents {
-  display: none;
-}
-
-/* .scoreP{
-
-} */
