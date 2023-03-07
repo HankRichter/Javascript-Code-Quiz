@@ -15,6 +15,10 @@
   text-align: center;
 }
 
+.button:hover{
+  opacity: 60%;
+}
+
 header {
   display: flex;
   align-items: center;
