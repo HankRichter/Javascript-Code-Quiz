@@ -66,6 +66,7 @@ const questions = [question1, question2, question3, question4, question5];
 
 // 1.timer starts and counts down when start is clicked
 function timerScore() {
+  timer.innerHTML = timeLeft;
   intervalRef = setInterval(function () {
     timeLeft--;
     timer.innerHTML = timeLeft;
@@ -168,6 +169,7 @@ function gotoHome() {
   leaderboardEntries.innerHTML = "";
   questionCounter = 0;
   timeLeft = 75;
+  timer.innerHTML = "";
 }
 
 function userInput() {
