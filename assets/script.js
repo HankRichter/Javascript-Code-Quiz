@@ -168,7 +168,7 @@ function highScoreTable() {
       scoreEntryContainer.appendChild(scoreEntryValue);
       scoreEntryValue.classList.add("scoreValue");
       scoreEntryValue.innerHTML += leaderboard[i].intials;
-      scoreEntryValue.innerHTML += leaderboard[i].score;
+      scoreEntryValue.innerHTML += ": " + leaderboard[i].score;
     }
   }
   leaderboardContents.style.display = "block";
