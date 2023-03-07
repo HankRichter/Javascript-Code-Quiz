@@ -74,3 +74,13 @@ header {
   padding: 2px;
   width: auto;
 }
+
+
+@media (max-width: 970px){
+  .submitButton{
+    width: 25%;
+  }
+  .intialsInput{
+    width: 50%;
+  }
+}
