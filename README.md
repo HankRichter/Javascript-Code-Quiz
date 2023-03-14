@@ -2,7 +2,7 @@
 
 ## Description
 
-This simple quiz us meant to test someones basic knowledge of Javascript. It allows you to answer a series of 5 questions and then post the score you got to a leaderbaord stored locally.
+This simple quiz is meant to test someones basic knowledge of Javascript. It allows you to answer a series of 5 questions and then post the score you got to a leaderbaord stored locally.
 
 ## Installation
 
